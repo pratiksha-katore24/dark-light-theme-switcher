@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dark-light-DOM</title>
+    <style>
+       .theme-icon{
+        height: 30px;
+        width: 40px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+
+       }
+       .active{
+        border: 2px solid black;
+
+       }
+       .theme-dark{
+        background-color: #000;
+        color: #fff;
+       }
+       .theme-light{
+        background-color: #fff;
+        color: #000;
+       }
+    </style>
+</head>
+<body id="body">
+    <div>
+        <img src="dark-mode.png" class="theme-icon active" id="img-dark" onclick="darkMode()"/>
+        <img src="light-mode.png" class="theme-icon " id="img-light" onclick="lightMode()" />
+        <h1>this is light/dark mode theme changer</h1>
+        <p>
+            myself pratiksha katore.
+            im currently taking education in bjs college wagholi.
+            my stream is BCA.
+        </p>
+        <script>
+            function darkMode(){
+              const imgDark=document.getElementById('img-dark');
+              imgDark.classList.add('active');
+
+              const imgLight=document.getElementById('img-light');
+              imgLight.classList.remove('active');
+
+              const bodyElement=document.getElementById("body");
+              bodyElement.className="theme-dark";
+            }
+            function lightMode(){
+                const imgDark=document.getElementById('img-dark');
+              imgDark.classList.remove('active');
+
+              const imgLight=document.getElementById('img-light');
+              imgLight.classList.add('active');
+
+              const bodyElement=document.getElementById("body");
+              bodyElement.className="theme-light";
+            }
+        </script>
+    </div>
+</body>
+</html>
